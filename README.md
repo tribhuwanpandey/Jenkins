@@ -74,8 +74,10 @@ Automatically deploy code to a **production server** after a successful Jenkins 
 5. Add **credentials** and the **hostname** of the production server
 6. **Test the SSH connection** to ensure Jenkins can access the production server
 
-withCredentials([usernamePassword(credentialsId: 'prodserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) 
+```groovy
+withCredentials([usernamePassword(credentialsId: 'prodserver_login', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
 
+```
 ### to connect to production server
 
 
@@ -83,16 +85,25 @@ withCredentials([usernamePassword(credentialsId: 'prodserver_login', usernameVar
 
 ### Push docker image to docker hub
  
+``` groovy 
+
   withRegistry('https://registry.hub.docker.com', 'docker_hub_login')
+```
+
 
 ### Ask approval before deploying to production
 
+``` groovy
   input 'Deploy to Production?'
+
+```
 
 ### Use milestone to accidently deploying old version over a new version
 
-  milestone(1)
+``` groovy
 
+  milestone(1)
+``` 
 
 # Create build agent on a second server
 
