@@ -55,25 +55,9 @@ An **Executor** is a slot on an agent that can handle **one job at a time**.
 
 ---
 
-## Jenkins Architecture:
+## Jenkins Architecture
 
-               +-------------------------+
-               |     Jenkins Controller  |
-               |-------------------------|
-               | - Web UI & Configuration|
-               | - Job Scheduling        |
-               | - Plugin Management     |
-               +-----------+-------------+
-                           |
-             +-------------+--------------+
-             |             |              |
-   +---------v---+ +-------v------+ +-----v--------+
-   | Agent Node 1| | Agent Node 2 | | Agent Node 3 |
-   | (Linux)     | | (Windows)    | | (Docker/K8s) |
-   +-------------+ +--------------+ +--------------+
-   | Java Builds | | .NET Builds  | | Containerized|
-   |             | |              | | Environments |
-   +-------------+ +--------------+ +--------------+
+![alt text](image.png)
 
 
 ##  How It Works
